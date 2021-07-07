@@ -1,0 +1,10 @@
+.product-list__grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+
+    .product-list__item{
+        width: 100px;
+        height: 100px;
+        display: inline-block;
+    }
+}

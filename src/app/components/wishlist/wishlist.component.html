@@ -1,0 +1,14 @@
+<p>wishlist works!</p>
+
+
+<div *ngFor="let item of wishlistItems">
+    <!-- <app-wishlist-item [wishlistItem]="item"></app-wishlist-item> -->
+    <span>wishlistItems name {{ item.name }}</span>
+    <br>
+    <span>price: {{ item.price| currency }}</span>
+    <!-- <button (click)="deleteFromWishlist()">delete</button> -->
+    <button (click)="indexOfWishlist()">indexOfWishlist</button>
+</div>
+
+<div>wishlistItems.length {{wishlistItems.length}}</div>
+

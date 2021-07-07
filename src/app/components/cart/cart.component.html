@@ -1,0 +1,25 @@
+<p>cart works!</p>
+
+<div class="cart-item" *ngFor="let item of cartItems">
+    <span>Product name {{ item.name }}</span>
+    <br>
+    <span>price: {{ item.price | currency }}</span>
+    <br>
+    
+    <div class="cart-item__quantity">
+        <button class="cart-item__quantity__minus" (click)="minusQty(item)">
+            -
+        </button>
+        <div class="cart-item__quantity__qty">
+            qty: {{ item.qty }}
+        </div>
+        <button class="cart-item__quantity__plus" (click)="plusQty(item)">
+            +
+        </button>
+    </div>
+    <button class="cart-item__item__button-delete" (click)="delete(item)">delete</button>
+
+</div>
+<!-- <div>getNumberOfItems {{getNumberOfItems}}</div> -->
+<div>cartItems.length {{cartItems.length}}</div>
+<!-- <button (click)="clearCart()">clear</button> -->
