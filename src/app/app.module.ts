@@ -15,6 +15,7 @@ import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { WishlistComponent } from './components/wishlist/wishlist.component';
 import { WishlistItemComponent } from './components/wishlist/wishlist-item/wishlist-item.component';
 import { WishlistService } from './services/wishlist.service';
+import { MiniWishlistComponent } from './components/wishlist/mini-wishlist/mini-wishlist.component';
 
 
 @NgModule({
@@ -27,6 +28,7 @@ import { WishlistService } from './services/wishlist.service';
     CartItemComponent,
     WishlistComponent,
     WishlistItemComponent,
+    MiniWishlistComponent,
   ],
   imports: [
     BrowserModule,
