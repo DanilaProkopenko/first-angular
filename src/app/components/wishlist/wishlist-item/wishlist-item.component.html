@@ -1,8 +1,10 @@
 <p>wishlist-item works!</p>
 
-
+<a routerLink="/products/{{wishlistItem.id}}">
+    <span>wishlistItems name {{ wishlistItem.name }}</span>
+</a>
 <span>wishlistItems name {{ wishlistItem.name }}</span>
 <br>
 <span>price: {{ wishlistItem.price| currency }}</span>
-<button (click)="deleteFromWishlist()">delete</button>
-<button (click)="indexOfWishlist()">indexOfWishlist</button>
+<button (click)="delete(wishlistItem)">delete</button>
+<button (click)="addToCart(wishlistItem)">add to cart</button>

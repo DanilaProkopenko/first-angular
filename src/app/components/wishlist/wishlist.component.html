@@ -2,14 +2,15 @@
 
 
 <div *ngFor="let item of wishlistItems">
-    <!-- <app-wishlist-item [wishlistItem]="item"></app-wishlist-item> -->
-    <span>wishlistItems name {{ item.name }}</span>
+    <app-wishlist-item [wishlistItem]="item"></app-wishlist-item>
+    <!-- <a routerLink="/products/{{item.id}}">
+        <span>wishlistItems name {{ item.name }}</span>
+    </a>
     <br>
-    <span>price: {{ item.price| currency }}</span>
-    <!-- <button (click)="deleteFromWishlist()">delete</button> -->
+    <span>price: {{ item.price| currency }}</span><br>
     <button (click)="delete(item)">delete</button>
-    <button (click)="addToCart(item)">add to cart</button>
+    <button (click)="addToCart(item)">add to cart</button>  -->
 </div>
 
-<div>wishlistItems.length {{wishlistItems.length}}</div>
+<!-- <div>wishlistItems.length {{wishlistItems.length}}</div> -->
 

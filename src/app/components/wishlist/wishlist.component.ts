@@ -20,12 +20,12 @@ export class WishlistComponent implements OnInit {
     this.wishlistItems = this.wishlistService.getWishlistItems();
   }
 
-  delete(item: any) {
-    this.wishlistService.delete(item);
-  }
+  // delete(item: any) {
+  //   this.wishlistService.delete(item);
+  // }
 
-  addToCart(item: any){
-    this.сartService.addToCart(item);
-    this.wishlistService.delete(item);
-  }
+  // addToCart(item: any){
+  //   this.сartService.addToCart(item);
+  //   this.wishlistService.delete(item);
+  // }
 }
