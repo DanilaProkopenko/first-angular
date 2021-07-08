@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { WishlistService } from 'src/app/services/wishlist.service';
+import { CartService } from 'src/app/services/cart.service';
 
 @Component({
   selector: 'app-wishlist',
@@ -9,19 +10,22 @@ import { WishlistService } from 'src/app/services/wishlist.service';
 export class WishlistComponent implements OnInit {
 
   constructor(
-    private wishlistService: WishlistService
+    private wishlistService: WishlistService,
+    private сartService: CartService
   ) { }
 
   wishlistItems = [] as any[];
 
-  indexOfWishlist() {
-    // console.log(this.wishlistItems);
-    for (let i in this.wishlistItems) {
-      console.log(this.wishlistItems);
-    }
-  }
-
   ngOnInit(): void {
     this.wishlistItems = this.wishlistService.getWishlistItems();
+  }
+
+  delete(item: any) {
+    this.wishlistService.delete(item);
+  }
+
+  addToCart(item: any){
+    this.сartService.addToCart(item);
+    this.wishlistService.delete(item);
   }
 }

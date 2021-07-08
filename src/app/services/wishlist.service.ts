@@ -12,48 +12,32 @@ export class WishlistService {
   constructor() { }
 
   addToWishlist(product: any) {
-    this.wishlistItems.push({
-      id: product.id,
-      name: product.name,
-      price: product.price,
-      qty: 1
-    });
+    let productExist = false;
 
-    // if (this.cartItems.length === 0) {
-    //   this.cartItems.push({
-    //     id: product.id,
-    //     name: product.name,
-    //     price: product.price,
-    //     qty: 1,
-    //   });
-    // } else {
-    //   for (let i in this.cartItems) {
-    //     if (this.cartItems[i].id === product.id) {
-    //       this.cartItems[i].qty++
-    //     } else {
-    //       this.cartItems.push({
-    //         id: product.id,
-    //         name: product.name,
-    //         price: product.price,
-    //         qty: product.qty,
-    //       });
-    //     }
-    //   }
-    // }
+    // Можно сделать проверку по свойствам, допустим если выбраны товары разного цвета, то в список желаний добавяться оба товара, но если товар идентичный по всем свойствам, то не добавляется.
+    // сделал проверку по имени, так как id при доавлении из корзины выдает undefined
+    for(let i in this.wishlistItems){
+      if(this.wishlistItems[i].name === product.name){
+        productExist = true;
+        break;
+      }
+    }
 
-    console.log(this.wishlistItems);
-    console.log("Wishlist: " + this.wishlistItems.length);
+    if(!productExist){
+      this.wishlistItems.push({
+        id: product.id,
+        name: product.name,
+        price: product.price,
+        qty: 1
+      });
+    }
   }
-
-  numberOfItems = 0;
-
-  // getNumberOfItems() {
-  //   return this.numberOfItems = this.wishlistItems.length;
-  // }
 
   getWishlistItems() {
     return this.wishlistItems;
   }
 
-  
+  delete(product:  any){
+    this.wishlistItems.splice(this.wishlistItems.indexOf(product), 1);
+  }
 }

@@ -7,7 +7,8 @@
     <br>
     <span>price: {{ item.price| currency }}</span>
     <!-- <button (click)="deleteFromWishlist()">delete</button> -->
-    <button (click)="indexOfWishlist()">indexOfWishlist</button>
+    <button (click)="delete(item)">delete</button>
+    <button (click)="addToCart(item)">add to cart</button>
 </div>
 
 <div>wishlistItems.length {{wishlistItems.length}}</div>
