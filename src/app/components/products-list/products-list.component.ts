@@ -70,7 +70,7 @@ export class ProductsListComponent implements OnInit {
         id: product.id,
         name: product.name,
         price: product.price,
-        qty: product.qty,
+        qty: product.qty = 1,
         description: product.description
       }
     });

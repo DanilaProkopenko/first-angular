@@ -47,4 +47,15 @@ export class ProductService {
     // );
   }
 
+  plusQty(product: any){
+    product.qty++;
+  }
+
+  minusQty(product: any){
+    let count = product.qty--;
+    if ((count < 2) && (count = 1)){
+      product.qty = 1;
+    }
+  }
+  
 }

@@ -25,7 +25,7 @@ export class CartService {
         productId: product.id,
         name: product.name,
         price: product.price,
-        qty: 1
+        qty: product.qty
       });
     }
 

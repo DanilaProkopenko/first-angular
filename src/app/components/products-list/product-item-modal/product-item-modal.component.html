@@ -1,8 +1,18 @@
-<h1 mat-dialog-title>product modal
+<button (click)="onNoClick()">close modal</button>
+<h4 mat-dialog-title>product modal
     <a routerLink="/products/{{data.id}}">{{data.name}}</a>
-</h1>
+</h4>
 <p>{{data.id}}</p>
 <p>{{data.price}}</p>
-<p>{{data.qty}}</p>
+<button class="" (click)="minusQty(data)">
+    -
+</button>
+<div class="">
+    qty: {{ data.qty }}
+</div>
+<button class="" (click)="plusQty(data)">
+    +
+</button>
 <p>{{data.description}}</p>
-<button (click)="onNoClick()">x</button>
+<button (click)="addToCart(data)">add to cart</button>
+<button (click)="addToWishlist(data)">add to wishlist</button>
