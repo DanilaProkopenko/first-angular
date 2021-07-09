@@ -5,6 +5,16 @@ import { CartService } from 'src/app/services/cart.service';
 import { WishlistService } from 'src/app/services/wishlist.service';
 
 
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { ProductItemModalComponent } from './product-item-modal/product-item-modal.component';
+
+export interface DialogData {
+  id: number;
+  name: string;
+  price: number;
+  qty: number;
+  description: string;
+}
 
 @Component({
   selector: 'app-products-list',
@@ -14,13 +24,16 @@ import { WishlistService } from 'src/app/services/wishlist.service';
 export class ProductsListComponent implements OnInit {
 
   products: Product[] = [];
-  product = [] as any[];
+  // product = [] as any[];
+  product: any;
   getNumberOfItems = 0;
 
   constructor(
     private productService: ProductService,
     private cartService: CartService,
     private wishlistService: WishlistService,
+    public dialog: MatDialog
+
 
   ) { }
 
@@ -47,5 +60,29 @@ export class ProductsListComponent implements OnInit {
   addToWishlist(product: any) {
     this.wishlistService.addToWishlist(product)
   }
+
+
+
+  openDialog(product: any): void {
+    const dialogRef = this.dialog.open(ProductItemModalComponent, {
+      width: '250px',
+      data: {
+        id: product.id,
+        name: product.name,
+        price: product.price,
+        qty: product.qty,
+        description: product.description
+      }
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+      this.product = result;
+    });
+
+    console.log(this.products.indexOf(product))
+    // console.log()
+  }
+
 
 }

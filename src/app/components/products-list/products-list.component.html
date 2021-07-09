@@ -21,9 +21,11 @@
 
             <button class="product-list__item__button-cart" (click)="addToCart(product)">add to cart</button>
             <button class="product-list__item__button-wishlist" (click)="addToWishlist(product)">wishlist</button>
+            <button mat-raised-button (click)="openDialog(product)">Pick one</button>
+
         </div>
 
-    <!-- <app-product-item [productItem]="product"></app-product-item> -->
+        <!-- <app-product-item [productItem]="product"></app-product-item> -->
 
     </div>
 </div>

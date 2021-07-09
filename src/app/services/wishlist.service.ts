@@ -28,6 +28,7 @@ export class WishlistService {
         id: product.id,
         name: product.name,
         price: product.price,
+        description: product.description,
         qty: 1
       });
     }
