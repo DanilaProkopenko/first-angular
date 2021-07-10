@@ -13,6 +13,7 @@ export interface DialogData {
   name: string;
   img: string;
   price: number;
+  totalPrice: number;
   qty: number;
   description: string;
 }
@@ -72,6 +73,7 @@ export class ProductsListComponent implements OnInit {
         name: product.name,
         img: product.img,
         price: product.price,
+        totalPrice: product.price * product.qty,
         qty: product.qty = 1,
         description: product.description
       }

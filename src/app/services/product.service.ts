@@ -20,8 +20,8 @@ export class ProductService {
     private http: HttpClient
   ) { }
 
-  getProducts(): Observable<Product[]>{
-    return this.http.get<Product[]> (this.productsUrl)
+  getProducts(): Observable<Product[]> {
+    return this.http.get<Product[]>(this.productsUrl)
   }
 
   getProduct(id: number): Observable<Product> {
@@ -33,10 +33,10 @@ export class ProductService {
     return this.http.get<Product>(url)
   }
 
-  
+
 
   /** DELETE: delete the hero from the server */
-  deleteHero (product: Product | number): Observable<Product> {
+  deleteHero(product: Product | number): Observable<Product> {
     const id = typeof product === 'number' ? product : product.id;
     const url = `${this.productsUrl}/${id}`;
 
@@ -47,15 +47,27 @@ export class ProductService {
     // );
   }
 
-  plusQty(product: any){
+  plusQty(product: any) {
     product.qty++;
+    // product.totalPrice += product.price;
+    product.totalPrice = product.price * product.qty;
+
+    console.log(product)
   }
 
-  minusQty(product: any){
+  minusQty(product: any) {
     let count = product.qty--;
-    if ((count < 2) && (count = 1)){
+
+    if ((count < 2) && (count = 1)) {
       product.qty = 1;
+      product.totalPrice = product.price;
+    } else {
+      product.totalPrice = product.price * product.qty;
+
+      // product.totalPrice -= product.price;
     }
+
+    console.log(product)
   }
-  
+
 }

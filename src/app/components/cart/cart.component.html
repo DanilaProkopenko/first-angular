@@ -3,7 +3,8 @@
 <div class="cart-item" *ngFor="let item of cartItems">
     <span>Product name {{ item.name }}</span>
     <br>
-    <span>price: {{ item.price * item.qty | currency }}</span>
+    <!-- <span>price: {{ item.price * item.qty | currency }}</span> -->
+    <span>price: {{ item.totalPrice | currency }}</span>
     <!-- <span>price: {{ item.price| currency }}</span> -->
     <!-- <span>price: {{ productPrice | currency }}</span> -->
     <br>

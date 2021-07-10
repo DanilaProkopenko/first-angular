@@ -11,11 +11,12 @@ export class CartService {
   addToCart(product: any) {
     let productExist = false;
     var productPrice = product.price;
-    
+
     for (let i in this.cartItems) {
       if (this.cartItems[i].productId === product.id) {
         this.cartItems[i].qty++;
-        this.cartItems[i].price += productPrice;
+        this.cartItems[i].totalPrice += this.cartItems[i].price;
+
         productExist = true;
         break;
       }
@@ -27,9 +28,12 @@ export class CartService {
         img: product.img,
         name: product.name,
         price: product.price,
+        totalPrice: product.price * product.qty,
         qty: product.qty,
       });
     }
+
+    console.log(this.cartItems)
   }
 
   getCartItems() {
@@ -48,20 +52,28 @@ export class CartService {
   plusQty(product: any) {
     let productId = this.cartItems.indexOf(product);
     this.cartItems[productId].qty++;
+    // this.cartItems[productId].totalPrice += this.cartItems[productId].price;
+    this.cartItems[productId].totalPrice = this.cartItems[productId].price * this.cartItems[productId].qty;
 
+    console.log(this.cartItems)
   }
 
   minusQty(product: any) {
     let productId = this.cartItems.indexOf(product);
     this.cartItems[productId].qty--;
+    // this.cartItems[productId].totalPrice -= this.cartItems[productId].price;
+    this.cartItems[productId].totalPrice = this.cartItems[productId].price * this.cartItems[productId].qty;
 
     if (this.cartItems[productId].qty === 0) {
       this.delete(product)
     }
+
+    console.log(this.cartItems)
+
   }
 
   allPrice = 0;
-  totalPrice(product : any){
+  totalPrice(product: any) {
     return this.allPrice += (product.qty * product.price);
   }
 
@@ -82,7 +94,7 @@ export class CartService {
       // console.log(el);
       let cartItemJSON = JSON.parse(JSON.stringify(el));
       console.log(cartItemJSON);
-      return cartJSon = cartItemJSON ;
+      return cartJSon = cartItemJSON;
     })
 
     // if (Array.isArray(arr)) {

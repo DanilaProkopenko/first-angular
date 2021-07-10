@@ -11,7 +11,6 @@ import { WishlistService } from 'src/app/services/wishlist.service';
 export class CartComponent implements OnInit {
 
   cartItems = [] as any[];
-  // getNumberOfItems = 0;
   cartJSon = [];
   productPrice = [];
 
@@ -22,14 +21,7 @@ export class CartComponent implements OnInit {
 
   ngOnInit(): void {
     this.cartItems = this.cartService.getCartItems();
-    // this.productPrice = this.cartService.addToCart();
-    // this.getNumberOfItems = this.cartService.getNumberOfItems();
   }
-
-  // clearCart(){
-  //   this.cartService.clearCart();
-  //   console.log(this.cartItems)
-  // }
 
   delete(item: any) {
     this.cartService.delete(item);
