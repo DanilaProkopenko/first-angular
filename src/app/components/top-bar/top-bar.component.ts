@@ -19,14 +19,10 @@ export class TopBarComponent implements OnInit {
 
   cartItems = [] as any[];
   wishlistItems = [] as any[];
-  allPrice = 0;
-
 
   ngOnInit(): void {
     this.cartItems = this.cartService.getCartItems()
     this.wishlistItems = this.wishlistService.getWishlistItems();
-    this.allPrice = this.cartService.allPrice;
-
   }
 
   // totalPrice() {

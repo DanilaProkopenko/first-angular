@@ -49,10 +49,7 @@ export class ProductService {
 
   plusQty(product: any) {
     product.qty++;
-    // product.totalPrice += product.price;
     product.totalPrice = product.price * product.qty;
-
-    console.log(product)
   }
 
   minusQty(product: any) {
@@ -63,11 +60,7 @@ export class ProductService {
       product.totalPrice = product.price;
     } else {
       product.totalPrice = product.price * product.qty;
-
-      // product.totalPrice -= product.price;
     }
-
-    console.log(product)
   }
 
 }

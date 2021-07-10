@@ -84,7 +84,7 @@ export class ProductsListComponent implements OnInit {
       this.product = result;
     });
 
-    console.log(this.products.indexOf(product))
+    // console.log(this.products.indexOf(product))
     // console.log()
   }
 
