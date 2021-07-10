@@ -1,10 +1,86 @@
-.product-list__grid{
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+* {
+    margin : 0;
+    padding: 0;
+}
 
-    .product-list__item{
-        width: 100px;
-        height: 100px;
-        display: inline-block;
+.content {
+    width: 100%;
+
+    .wrap {
+        width : 70%;
+        margin: auto;
+    }
+}
+
+.product-list__grid {
+    display              : grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    margin-top           : 70px;
+
+    .product-list__item {
+        width      : 200px;
+        height     : 400px;
+        display    : inline-block;
+        text-align : center;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size  : 16px;
+        font-weight: 600;
+    }
+
+    .product-list__item__img,
+    .product-list__item__img img {
+        width : 200px;
+        height: 200px;
+    }
+
+    .product-list__item__img,
+    .product-list__item__name,
+    .product-list__item__price {
+        margin-bottom: 10px;
+    }
+
+    .product-list__item__name,
+    .product-list__item__img {
+        cursor: pointer;
+
+    }
+
+    .product-list__item__button-cart,
+    .product-list__item__button-wishlist {
+        text-align   : center;
+        font-size    : 16px;
+        padding      : 7px;
+        border-radius: 10px;
+        margin       : 3px;
+        cursor       : pointer;
+        border       : 1px solid #969696;
+        background-color: #eeeeee;
+
+        img {
+            width : 18px;
+            height: 18px;
+        }
+    }
+
+    .product-list__item__button-wishlist{
+        &:hover{
+            background-color: rgb(255, 145, 137);
+            border-color: rgb(255, 145, 137);
+        }
+    }
+
+    .product-list__item__button-cart {
+        p {
+            display    : inline-block;
+            margin-top : -5px;
+            font-size  : 18px;
+            font-weight: 600;
+            margin     : 0 2px;
+        }
+
+    &:hover{
+        background-color: rgba(74, 240, 74, 0.75);
+        border-color: rgba(74, 240, 74, 0.75);
+    }
     }
 }

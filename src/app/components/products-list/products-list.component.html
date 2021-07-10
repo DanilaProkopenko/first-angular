@@ -1,35 +1,48 @@
-<p>products-list works!</p>
-
-<div class="product-list__grid">
-    <div *ngFor="let product of products">
-        <!-- <a [title]="product.name + ' ' + product.id" [routerLink]="['/products', product.id]">
+<div class="content">
+    <div class="wrap">
+        <div class="product-list__grid">
+            <div *ngFor="let product of products">
+                <!-- <a [title]="product.name + ' ' + product.id" [routerLink]="['/products', product.id]">
             {{ product.name }}
         </a> -->
 
-        <div class="product-list__item">
-            <div class="product-list__item__name">
-                <a routerLink="/products/{{product.id}}">
-                    Product name: {{product.name}}
-                </a>
-            </div>
-            <div class="product-list__item__price">
-                {{product.price | currency}}
-            </div>
-            <div class="product-list__item__description">
-                description: {{product.description}}
-            </div>
+                <div  class="product-list__item">
+                    <div class="product-list__item__modal" mat-raised-button (click)="openDialog(product)">
+                        <div class="product-list__item__img">
+                            <img src="{{product.img}}" alt="">
+                        </div>
+                        <div class="product-list__item__name">
+                            <!-- <button mat-raised-button (click)="openDialog(product)">{{product.name}}</button> -->
+                            <!-- <a routerLink="/products/{{product.id}}">
+                                Product name: {{product.name}}
+                            </a> -->
+                            {{product.name}}
+                        </div>
+                    </div>
+                    <div class="product-list__item__price">
+                        <!-- {{product.price | currency}} -->
+                        {{product.price}} рублей
+                    </div>
+                    <!-- <div class="product-list__item__description">
+                        description: {{product.description}}
+                    </div> -->
 
-            <button class="product-list__item__button-cart" (click)="addToCart(product)">add to cart</button>
-            <button class="product-list__item__button-wishlist" (click)="addToWishlist(product)">add to wishlist</button>
-            <button mat-raised-button (click)="openDialog(product)">Open modal</button>
+                    <button class="product-list__item__button-cart" (click)="addToCart(product)">
+                        <img src="https://img.icons8.com/material-outlined/24/000000/fast-cart.png" />
+                        <p>В корзину</p>
+                    </button>
+                    <button class="product-list__item__button-wishlist" (click)="addToWishlist(product)">
+                        <img src="https://img.icons8.com/material-outlined/24/000000/wish-list.png" />
+                    </button>
 
+                </div>
+
+                <!-- <app-product-item [productItem]="product"></app-product-item> -->
+
+            </div>
         </div>
-
-        <!-- <app-product-item [productItem]="product"></app-product-item> -->
-
     </div>
 </div>
-
 <app-cart></app-cart>
 <app-wishlist></app-wishlist>
 <!-- <app-product-item></app-product-item> -->

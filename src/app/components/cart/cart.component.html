@@ -3,7 +3,9 @@
 <div class="cart-item" *ngFor="let item of cartItems">
     <span>Product name {{ item.name }}</span>
     <br>
-    <span>price: {{ item.price | currency }}</span>
+    <span>price: {{ item.price * item.qty | currency }}</span>
+    <!-- <span>price: {{ item.price| currency }}</span> -->
+    <!-- <span>price: {{ productPrice | currency }}</span> -->
     <br>
     
     <div class="cart-item__quantity">
@@ -22,5 +24,7 @@
 
 </div>
 <!-- <div>getNumberOfItems {{getNumberOfItems}}</div> -->
+<button (click)="parseToJsonCartItems()">TO JSON</button>
+<div>{{cartJSon | json}}</div>
 <div>cartItems.length {{cartItems.length}}</div>
 <!-- <button (click)="clearCart()">clear</button> -->

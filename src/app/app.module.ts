@@ -35,6 +35,7 @@ import { ProductItemModalComponent } from './components/products-list/product-it
     MiniWishlistComponent,
     WishlistItemModalComponent,
     ProductItemModalComponent,
+    
   ],
   imports: [
     BrowserModule,

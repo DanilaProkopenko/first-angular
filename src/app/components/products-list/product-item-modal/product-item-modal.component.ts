@@ -4,11 +4,13 @@ import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dial
 import { CartService } from 'src/app/services/cart.service';
 import { WishlistService } from 'src/app/services/wishlist.service';
 import { ProductService } from 'src/app/services/product.service';
+import { ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'app-product-item-modal',
   templateUrl: './product-item-modal.component.html',
-  styleUrls: ['./product-item-modal.component.scss']
+  styleUrls: ['./product-item-modal.component.scss'],
+  encapsulation: ViewEncapsulation.None
 })
 export class ProductItemModalComponent implements OnInit {
 

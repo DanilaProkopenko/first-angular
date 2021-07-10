@@ -1,18 +1,44 @@
-<button (click)="onNoClick()">close modal</button>
-<h4 mat-dialog-title>product modal
-    <a routerLink="/products/{{data.id}}">{{data.name}}</a>
-</h4>
-<p>{{data.id}}</p>
-<p>{{data.price}}</p>
-<button class="" (click)="minusQty(data)">
-    -
-</button>
-<div class="">
-    qty: {{ data.qty }}
+<div class="pim">
+    <button class="pim__close-btn" (click)="onNoClick()">X</button>
+    <div class="pim__atricle" mat-dialog-title>Добавить в корзину</div>
+
+    <div class="pim__info" mat-dialog-content>
+        <div class="pim__info__img">
+            <img src="{{data.img}}" alt="">
+        </div>
+
+        <div class="pim__info__name">
+            <a routerLink="/products/{{data.id}}">{{data.name}}</a>
+        </div>
+
+        <div class="pim__info__quantity">
+            <p>Кол-во: </p>
+            <p>
+                {{ data.qty }}
+            </p>
+            <div class="pim__info__quantity_f">
+                <button class="pim__info__quantity__plus-btn" (click)="plusQty(data)">
+                    <img src="https://img.icons8.com/material-rounded/24/000000/sort-down.png" />
+                </button>
+                <button class="pim__info__quantity__minus-btn" (click)="minusQty(data)">
+                    <img src="https://img.icons8.com/material-rounded/24/000000/sort-down.png" />
+                </button>
+
+            </div>
+        </div>
+
+        <div class="pim__info__price">
+            <p>Сумма:</p>
+            <p>
+                {{data.price * data.qty}}
+            </p>
+        </div>
+    </div>
+    <div mat-dialog-actions>
+        <button (click)="addToCart(data)" class="pim__cart-btn">
+            <img src="https://img.icons8.com/material-outlined/24/000000/fast-cart.png" />
+            Добавить
+        </button>
+        <!-- <button (click)="addToWishlist(data)">add to wishlist</button> -->
+    </div>
 </div>
-<button class="" (click)="plusQty(data)">
-    +
-</button>
-<p>{{data.description}}</p>
-<button (click)="addToCart(data)">add to cart</button>
-<button (click)="addToWishlist(data)">add to wishlist</button>

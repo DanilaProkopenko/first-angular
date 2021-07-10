@@ -11,6 +11,7 @@ import { ProductItemModalComponent } from './product-item-modal/product-item-mod
 export interface DialogData {
   id: number;
   name: string;
+  img: string;
   price: number;
   qty: number;
   description: string;
@@ -65,10 +66,11 @@ export class ProductsListComponent implements OnInit {
 
   openDialog(product: any): void {
     const dialogRef = this.dialog.open(ProductItemModalComponent, {
-      width: '250px',
+      width: '1000px',
       data: {
         id: product.id,
         name: product.name,
+        img: product.img,
         price: product.price,
         qty: product.qty = 1,
         description: product.description
@@ -76,7 +78,7 @@ export class ProductsListComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
+      // console.log('The dialog was closed');
       this.product = result;
     });
 

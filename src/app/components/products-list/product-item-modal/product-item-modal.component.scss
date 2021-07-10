@@ -1,0 +1,136 @@
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+
+* {
+    margin : 0;
+    padding: 0;
+}
+
+
+.pim {
+    width      : 100%;
+    font-size  : 24px;
+    font-weight: 600;
+
+    .pim__atricle {
+        text-align : center;
+        width      : 100%;
+        display    : inline-block;
+        font-size  : 24px;
+        font-weight: 600;
+    }
+
+    .pim__close-btn {
+        float           : right;
+        background-color: rgb(233, 233, 233);
+        border-radius   : 10px;
+        font-size       : 30px;
+        font-weight     : 600;
+        border          : 1px #969696 solid;
+        padding         : 5px 10px;
+        cursor          : pointer;
+
+        &:hover {
+            background-color: rgb(255, 145, 137);
+            border-color    : rgb(255, 145, 137);
+        }
+    }
+
+    .pim__info {
+        margin-top: 20px;
+    }
+
+    .pim__info__name {
+        a {
+            text-decoration: none;
+            color          : #000000de;
+        }
+    }
+
+    .pim__info__img,
+    .pim__info__img img {
+        width  : 300px;
+        height : 300px;
+        display: block;
+        float  : left;
+    }
+
+    .pim__cart-btn {
+        width           : 700px;
+        margin          : 20px auto;
+        background-color: rgb(41 153 41 / 75%);
+        border          : none;
+        border-radius   : 15px;
+        padding         : 10px;
+        text-align      : center;
+        font-size       : 24px;
+        font-weight     : 600;
+        color           : rgb(245, 245, 245);
+        cursor          : pointer;
+        display         : flex;
+        justify-content : center;
+
+        &:hover {
+            background-color: rgb(41 153 41 / 50%);
+            position        : relative;
+
+        }
+
+        img {
+            width  : 24px;
+            height : 24px;
+            display: inline-block;
+        }
+
+        p {
+            display: inline-block;
+        }
+    }
+
+    .pim__info__name,
+    .pim__info__quantity,
+    .pim__info__price {
+        margin-bottom: 20px;
+    }
+
+    .pim__info__quantity,
+    .pim__info__price {
+        p {
+            display     : inline-block;
+            margin-right: 10px;
+        }
+
+    }
+
+    .pim__info__quantity {
+        display       : flex;
+        flex-direction: row;
+        position      : relative;
+
+        p {
+            margin-right: 20px;
+        }
+
+        .pim__info__quantity_f {
+            display       : flex;
+            flex-direction: column;
+            margin        : -11px 0 0 0;
+
+            .pim__info__quantity__minus-btn,
+            .pim__info__quantity__plus-btn {
+                background-color: transparent;
+                border          : none;
+                text-align      : center;
+                cursor          : pointer;
+
+                img {
+                    width : 20px;
+                    height: 20px;
+                }
+            }
+
+            .pim__info__quantity__plus-btn img {
+                transform: rotate(180deg);
+            }
+        }
+    }
+}

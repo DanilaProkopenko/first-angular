@@ -1,1 +1,25 @@
-<p>top-bar works!</p>
+<div class="content">
+    <div class="wrap">
+        <nav class="top-bar__nav">
+            <ul class="top-bar__nav__ul">
+                <li class="top-bar__nav__ul__li"><a routerLink="/">Главная</a></li>
+                <li class="top-bar__nav__ul__li"><a routerLink="/cart">Корзина</a></li>
+                <li class="top-bar__nav__ul__li li_cart">
+                    <a routerLink="/cart">
+                        <div class="top-bar__nav__ul__li__cart">
+                            <div class="top-bar__nav__ul__li__cart__text">
+                                В корзине<br>
+                                На сумму
+                            </div>
+                            <div class="top-bar__nav__ul__li__cart__prop">
+                                {{cartItems.length}}<br>
+                                20 рублей
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                <li class="top-bar__nav__ul__li"><a routerLink="/wishlist">{{wishlistItems.length}} товара</a></li>
+            </ul>
+        </nav>
+    </div>
+</div>
