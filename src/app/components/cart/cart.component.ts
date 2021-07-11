@@ -46,4 +46,12 @@ export class CartComponent implements OnInit {
     return this.cartItemJSON = this.cartService.parseToJSONCartItems();
   }
 
+  //итоговая цена в рельном времени
+  get totalPrice()
+  {
+    return this.cartItems.reduce((sum,x)=>
+    ({qty:1,
+      price:sum.price+x.qty*x.price}),
+    {qty:1,price:0}).price;
+  }
 }

@@ -58,6 +58,7 @@ export class CartService {
   //   return this.cartItems;
   // }
 
+
   delete(product: any) {
     this.cartItems.splice(this.cartItems.indexOf(product), 1);
   }
