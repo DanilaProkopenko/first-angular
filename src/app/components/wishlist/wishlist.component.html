@@ -1,16 +1,7 @@
-<p>wishlist works!</p>
-
-
-<div *ngFor="let item of wishlistItems">
-    <app-wishlist-item [wishlistItem]="item"></app-wishlist-item>
-    <!-- <a routerLink="/products/{{item.id}}">
-        <span>wishlistItems name {{ item.name }}</span>
-    </a>
-    <br>
-    <span>price: {{ item.price| currency }}</span><br>
-    <button (click)="delete(item)">delete</button>
-    <button (click)="addToCart(item)">add to cart</button>  -->
+<div class="content">
+    <div class="wishlist">
+        <div *ngFor="let item of wishlistItems" class="wishlist-item__box">
+            <app-wishlist-item [wishlistItem]="item"></app-wishlist-item>
+        </div>
+    </div>
 </div>
-
-<!-- <div>wishlistItems.length {{wishlistItems.length}}</div> -->
-

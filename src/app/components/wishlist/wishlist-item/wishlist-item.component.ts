@@ -8,7 +8,9 @@ import { WishlistItemModalComponent } from './wishlist-item-modal/wishlist-item-
 export interface DialogData {
   id: number;
   name: string;
+  img: string;
   price: number;
+  totalPrice: number;
   qty: number;
   description: string;
 }
@@ -23,7 +25,6 @@ export interface DialogData {
 export class WishlistItemComponent implements OnInit {
   @Input() wishlistItem: any;
   product: any;
-  wishlistItems = [] as any[];
 
   constructor(
     private wishlistService: WishlistService,
@@ -33,29 +34,26 @@ export class WishlistItemComponent implements OnInit {
 
   openDialog(): void {
     const dialogRef = this.dialog.open(WishlistItemModalComponent, {
-      width: '250px',
-      data: { 
+      width: '600px',
+      data: {
         id: this.wishlistItem.id,
         name: this.wishlistItem.name,
+        img: this.wishlistItem.img,
         price: this.wishlistItem.price,
-        qty:this.wishlistItem.qty,
+        totalPrice: this.wishlistItem.price * this.wishlistItem.qty,
+        qty: this.wishlistItem.qty,
         description: this.wishlistItem.description
       }
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
+      // console.log('The dialog was closed');
       this.product = result;
     });
 
-    console.log(this.wishlistItem.name)
   }
 
   ngOnInit(): void {
-  }
-
-  msg() {
-    console.log(this.wishlistItem);
   }
 
   delete(item: any) {

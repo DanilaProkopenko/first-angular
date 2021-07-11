@@ -31,6 +31,7 @@ export class ProductItemModalComponent implements OnInit {
 
   addToCart(product: any){
     this.cartService.addToCart(product);
+    this.onNoClick();
   }
 
   addToWishlist(product: any){

@@ -27,6 +27,8 @@ export class WishlistService {
       this.wishlistItems.push({
         id: product.id,
         name: product.name,
+        img: product.img,
+        totalPrice: product.totalPrice,
         price: product.price,
         description: product.description,
         qty: 1

@@ -1,0 +1,57 @@
+.mini-wishlist-modal {
+    width: 100%;
+
+    .mini-wishlist__btn {
+        width  : 200px;
+        padding: 13px;
+        margin : 10px auto;
+        display: flex;
+
+        justify-content: center;
+        text-align     : center;
+        font-family    : Ubuntu, Roboto, Oxygen, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        font-size      : 14px;
+        font-weight    : 600;
+        color          : #fdfdfd;
+        text-transform : uppercase;
+        text-decoration: none;
+        cursor         : pointer;
+        border         : none;
+        border-radius  : 5px;
+
+        background-color: #ff376e;
+
+        &:hover {
+
+            background-color: #ff376cc0;
+        }
+    }
+
+    .mini-wishlist__grid {
+        display              : grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+
+    .mini-wishlist__item {
+        width    : 150px;
+        // height: 200px;
+        display  : inline-block;
+        margin   : 50px auto;
+
+        .mini-wishlist__item__img,
+        img {
+            width  : 150px;
+            height : 150px;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .mini-wishlist__item__name {
+            text-align : center;
+            font-family: Ubuntu, Roboto, Oxygen, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-size  : 14px;
+            font-weight: 600;
+            color      : #2b2a2a;
+        }
+    }
+}

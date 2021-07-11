@@ -1,9 +1,20 @@
-<a routerLink="/products/{{wishlistItem.id}}">
-    <span>wishlistItems name {{ wishlistItem.name }}</span>
-</a>
-<span>wishlistItems name {{ wishlistItem.name }}</span>
-<br>
-<span>price: {{ wishlistItem.price| currency }}</span>
-<button (click)="delete(wishlistItem)">delete</button>
-<button (click)="addToCart(wishlistItem)">add to cart</button>
-<button mat-raised-button (click)="openDialog()">Open modal</button>
+<!-- <div class="wishlist-item__box"> -->
+    <div class="wishlist-item__ref-to-modal" mat-raised-button (click)="openDialog()">
+        <div class="wishlist-item__img">
+            <img src="https://img.mvideo.ru/Pdb/30052890b.jpg" alt="">
+        </div>
+        <div class="wishlist-item__name">
+            <p>{{wishlistItem.name}}</p>
+        </div>
+    </div>
+    <div class="wishlist-item__price">
+        <p>
+            {{wishlistItem.price}} рублей
+        </p>
+    </div>
+
+    <div class="wishlist-item__action">
+        <button class="wishlist-item__action__delete-btn" (click)="delete(wishlistItem)">Удалить</button>
+        <button class="wishlist-item__action__cart-btn" (click)="addToCart(wishlistItem)">Добавить в корзину</button>
+    </div>
+<!-- </div> -->

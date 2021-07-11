@@ -18,7 +18,11 @@
                         </div>
                     </a>
                 </li>
-                <li class="top-bar__nav__ul__li"><a routerLink="/wishlist">{{wishlistItems.length}} товара</a></li>
+                <li class="top-bar__nav__ul__li">
+                    <!-- <button (click)="openWishlistDialog()">open</button> -->
+                    <!-- <a routerLink="/wishlist" >{{wishlistItems.length}} товара</a></li> -->
+                    <div class="top-bar__nav__ul__li__wsh" (click)="openWishlistDialog()">{{wishlistItems.length}} товара</div>
+                </li>
             </ul>
         </nav>
     </div>

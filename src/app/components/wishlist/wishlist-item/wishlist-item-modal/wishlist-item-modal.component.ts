@@ -4,6 +4,7 @@ import { Product } from 'src/app/product';
 import { DialogData } from '../wishlist-item.component';
 import { CartService } from 'src/app/services/cart.service';
 import { WishlistService } from 'src/app/services/wishlist.service';
+import { ProductService } from 'src/app/services/product.service';
 
 @Component({
   selector: 'app-wishlist-item-modal',
@@ -16,6 +17,7 @@ export class WishlistItemModalComponent implements OnInit {
     public dialogRef: MatDialogRef<WishlistItemModalComponent>,
     private cartService: CartService,
     private wishlistService: WishlistService,
+    private productService: ProductService,
     @Inject(MAT_DIALOG_DATA) public data: DialogData) { }
 
   onNoClick(): void {
@@ -28,6 +30,15 @@ export class WishlistItemModalComponent implements OnInit {
   addToCart(item: any) {
     this.cartService.addToCart(item);
     this.wishlistService.delete(item);
+    this.onNoClick();
+  }
+
+  plusQty(item: any) {
+    this.productService.plusQty(item);
+  }
+
+  minusQty(item: any) {
+    this.productService.minusQty(item);
   }
 }
 

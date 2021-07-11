@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { MiniWishlistComponent } from './mini-wishlist.component';
+import { MiniWishlistModalComponent } from './mini-wishlist-modal.component';
 
-describe('MiniWishlistComponent', () => {
-  let component: MiniWishlistComponent;
-  let fixture: ComponentFixture<MiniWishlistComponent>;
+describe('MiniWishlistModalComponent', () => {
+  let component: MiniWishlistModalComponent;
+  let fixture: ComponentFixture<MiniWishlistModalComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ MiniWishlistComponent ]
+      declarations: [ MiniWishlistModalComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(MiniWishlistComponent);
+    fixture = TestBed.createComponent(MiniWishlistModalComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

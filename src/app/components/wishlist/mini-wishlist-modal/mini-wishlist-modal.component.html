@@ -1,0 +1,15 @@
+<div class="mini-wishlist-modal">
+    <div class="mini-wishlist__grid">
+        <div class="mini-wishlist__item" *ngFor="let item of items">
+            <div class="mini-wishlist__item__img">
+                <img src="{{item.img}}" alt="">
+            </div>
+            <div class="mini-wishlist__item__name">
+                <p>
+                    {{item.name}}
+                </p>
+            </div>
+        </div>
+    </div>
+    <a (click)="onNoClick()" routerLink="/wishlist" class="mini-wishlist__btn">В список желаний</a>
+</div>

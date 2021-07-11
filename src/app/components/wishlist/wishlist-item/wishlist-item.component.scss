@@ -1,0 +1,47 @@
+.wishlist-item__ref-to-modal{
+    cursor: pointer;
+
+    .wishlist-item__img,
+    img {
+        width : 300px;
+        height: 300px;
+    }
+}
+
+.wishlist-item__name, .wishlist-item__price {
+    font-family: Ubuntu, Roboto, Oxygen, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size  : 20px;
+    font-weight: 600;
+    text-align: center;
+    // width      : 60%;
+    // margin     : 0 auto;
+}
+
+.wishlist-item__action {
+
+    .wishlist-item__action__delete-btn,
+    .wishlist-item__action__cart-btn {
+        width  : 200px;
+        padding: 13px;
+        margin : 10px auto;
+        display: flex;
+
+        justify-content: center;
+        text-align     : center;
+        font-family    : Ubuntu, Roboto, Oxygen, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        font-size      : 14px;
+        font-weight    : 600;
+        color          : #fdfdfd;
+        text-transform : uppercase;
+        cursor         : pointer;
+        border         : none;
+        border-radius  : 5px;
+
+        background-color: #ff376e;
+
+        &:hover {
+
+            background-color: #ff376cc0;
+        }
+    }
+}

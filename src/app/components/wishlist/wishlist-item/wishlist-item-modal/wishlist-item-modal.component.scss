@@ -1,0 +1,81 @@
+.wsh-i-modal {
+    .wsh-i-modal__box {
+        font-family: Ubuntu, Roboto, Oxygen, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        font-size  : 20px;
+        font-weight: 600;
+        color      : #2c2c2c;
+
+        .wsh-i-modal_img,
+        img {
+            width : 300px;
+            height: 300px;
+        }
+
+        .wsh-i-modal__info {
+            display           : grid;
+            grid-template-rows: repeat(3, 70px);
+            justify-content   : left;
+        }
+
+        .wsh-i-modal__img {
+            display: block;
+            float  : left;
+        }
+
+        .wsh-i-modal__price-act {
+
+            .wsh-i-modal__price-act__plus-btn,
+            .wsh-i-modal__price-act__minus-btn,
+            .wsh-i-modal__qty {
+                display: inline-block;
+            }
+
+            .wsh-i-modal__qty {
+                margin: 0 20px;
+            }
+
+            .wsh-i-modal__price-act__plus-btn,
+            .wsh-i-modal__price-act__minus-btn {
+                vertical-align  : middle;
+                width           : 40px;
+                height          : 40px;
+                border-radius   : 100%;
+                border          : #b6b6b6 1px solid;
+                background-color: transparent;
+
+                cursor: pointer;
+
+                text-align    : center;
+                font-size     : 30px;
+                text-transform: uppercase;
+
+                color: #2c2c2c;
+            }
+        }
+
+        .wsh-i-modal__cart-btn {
+            width : 200px;
+            height: 50px;
+
+            padding: 13px;
+            margin : 10px auto;
+
+            text-align    : center;
+            font-family   : Ubuntu, Roboto, Oxygen, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-size     : 14px;
+            font-weight   : 600;
+            color         : #fdfdfd;
+            text-transform: uppercase;
+            cursor        : pointer;
+            border        : none;
+            border-radius : 5px;
+
+            background-color: #ff376e;
+
+            &:hover {
+
+                background-color: #ff376cc0;
+            }
+        }
+    }
+}

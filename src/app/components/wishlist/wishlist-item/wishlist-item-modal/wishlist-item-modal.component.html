@@ -1,10 +1,40 @@
-<h1 mat-dialog-title>Hi
-    <a routerLink="/products/{{data.id}}">{{data.name}}</a>
-</h1>
-<p>{{data.id}}</p>
-<p>{{data.price}}</p>
-<p>{{data.qty}}</p>
-<p>{{data.description}}</p>
-<p>wishlist-item-modal works!</p>
-<button (click)="onNoClick()">Close modal</button>
-<button (click)="addToCart(data)">add to cart</button>
+<!-- <a routerLink="/products/{{data.id}}">{{data.name}}</a> -->
+
+<div class="wsh-i-modal">
+    <div class="wsh-i-modal__box">
+        <div class="wsh-i-modal__img">
+            <img src="{{data.img}}" alt="">
+        </div>
+
+        <div class="wsh-i-modal__info">
+
+            <div class="wsh-i-modal__name">
+                <p>
+                    {{data.name}}
+                </p>
+            </div>
+
+            <div class="wsh-i-modal__price-act">
+                <button class="wsh-i-modal__price-act__minus-btn" (click)="minusQty(data)">-</button>
+                <div class="wsh-i-modal__qty">
+                    <p>
+                        {{data.qty}}
+                    </p>
+                </div>
+                <button class="wsh-i-modal__price-act__plus-btn" (click)="plusQty(data)">+</button>
+            </div>
+
+            
+            <div class="wsh-i-modal__totalPrice">
+                <p>
+                    {{data.totalPrice}} Рублей
+                </p>
+            </div>
+            
+
+            <button class="wsh-i-modal__cart-btn" (click)="addToCart(data)">
+                В корзину
+            </button>
+        </div>
+    </div>
+</div>

@@ -26,10 +26,6 @@ export class ProductService {
 
   getProduct(id: number): Observable<Product> {
     const url = `${this.productsUrl}/${id}`;
-    // return this.http.get<Hero>(url).pipe(
-    //   tap(_ => this.log(`fetched hero id=${id}`)),
-    //   catchError(this.handleError<Hero>(`getHero id=${id}`))
-    // );
     return this.http.get<Product>(url)
   }
 
@@ -41,10 +37,6 @@ export class ProductService {
     const url = `${this.productsUrl}/${id}`;
 
     return this.http.delete<Product>(url, this.httpOptions)
-    // .pipe(
-    //   tap(_ => this.log(`deleted hero id=${id}`)),
-    //   catchError(this.handleError<Hero>('deleteHero'))
-    // );
   }
 
   plusQty(product: any) {
