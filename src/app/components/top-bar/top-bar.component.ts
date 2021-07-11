@@ -19,6 +19,7 @@ export class TopBarComponent implements OnInit {
 
   cartItems = [] as any[];
   wishlistItems = [] as any[];
+  cartTotal: number = 0;
 
 
 
@@ -27,12 +28,20 @@ export class TopBarComponent implements OnInit {
     this.wishlistItems = this.wishlistService.getWishlistItems();
   }
 
-  //итоговая цена
-  get totalPrice()
-  {
-    return this.cartItems.reduce((sum,x)=>
-    ({qty:1,
-      price:sum.price+x.qty*x.price}),
-    {qty:1,price:0}).price;
+  //итоговая цена товаров
+  get totalPrice() {
+    return this.cartItems.reduce((sum, x) =>
+    ({
+      qty: 1,
+      price: sum.price + x.qty * x.price
+    }),
+      { qty: 1, price: 0 }).price;
   }
+
+  //итоговое количество товара
+  get totalNumberOfCartItem() {
+    return this.cartItems.reduce((sum, x) =>
+    ({qty: sum.qty + x.qty}),{qty: 0}).qty;
+  }
+
 }

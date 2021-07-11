@@ -14,7 +14,7 @@
         </div>
 
         <div class="customer-form__t-number">
-            <input type="text" placeholder="Номер телефона" formControlName="telNumber">
+            <input type="text" placeholder="+7 (9XX)-XX-XX" formControlName="telNumber" appPhoneMask>
         </div>
 
         <div class="customer-form__email">
@@ -42,11 +42,8 @@
             <input type="text" placeholder="Комментарий" formControlName="comment">
         </div>
 
-        <button type="submit" class="customer-form__submit-btn" [disabled]="!customerForm.valid">Отправить</button>
-
-        <p>
-            Form value: {{ this.customerForm.value }}
-        </p>
+        <button type="submit" class="customer-form__submit-btn" (click)="onSubmit()"
+            [disabled]="!customerForm.valid">Отправить</button>
         <p>
             Form Status: {{ customerForm.status }}
         </p>

@@ -11,8 +11,8 @@ import { WishlistService } from 'src/app/services/wishlist.service';
 export class CartComponent implements OnInit {
 
   cartItems = [] as any[];
-  cartTotal : any;
-  cartItemJSON : any;
+  cartTotal: any;
+  cartItemJSON: any;
 
   constructor(
     private cartService: CartService,
@@ -46,12 +46,21 @@ export class CartComponent implements OnInit {
     return this.cartItemJSON = this.cartService.parseToJSONCartItems();
   }
 
+
   //итоговая цена в рельном времени
-  get totalPrice()
-  {
-    return this.cartItems.reduce((sum,x)=>
-    ({qty:1,
-      price:sum.price+x.qty*x.price}),
-    {qty:1,price:0}).price;
+  get totalPrice() {
+    return this.cartItems.reduce((sum, x) =>
+    ({
+      qty: 1,
+      price: sum.price + x.qty * x.price
+    }),
+      { qty: 1, price: 0 }).price;
   }
+
+  //итоговое количество товара
+  get totalNumberOfCartItem() {
+    return this.cartItems.reduce((sum, x) =>
+      ({ qty: sum.qty + x.qty }), { qty: 0 }).qty;
+  }
+
 }

@@ -41,11 +41,9 @@ export class CartService {
   // TODO итоговая стоимость некорректно работает
   totalCostOfCart() {
     this.cartItems.forEach(el => {
-      console.log("el.qty: " + el.qty + " el.price: " + el.price)
       this.cartTotal += (el.qty * el.price)
     });
 
-    console.log(this.cartTotal);
     return this.cartTotal;
   }
 
@@ -84,6 +82,7 @@ export class CartService {
     this.cartItems.map(el => {
       this.cartItemJSON.push(JSON.parse(JSON.stringify(el)));
     })
+    // console.log(this.cartItemJSON)
     return this.cartItemJSON;
   }
 }

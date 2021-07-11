@@ -22,6 +22,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatDialogModule, MAT_DIALOG_DEFAULT_OPTIONS } from '@angular/material/dialog';
 import { ProductItemModalComponent } from './components/products-list/product-item-modal/product-item-modal.component';
 import { CustomerFormComponent } from './components/cart/customer-form/customer-form.component';
+import { PhoneMaskDirective } from './directive/phone-mask.directive';
 
 
 @NgModule({
@@ -38,6 +39,7 @@ import { CustomerFormComponent } from './components/cart/customer-form/customer-
     WishlistItemModalComponent,
     ProductItemModalComponent,
     CustomerFormComponent,
+    PhoneMaskDirective,
     
   ],
   imports: [

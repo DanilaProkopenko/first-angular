@@ -3,6 +3,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { Validators } from '@angular/forms';
 import { FormArray } from '@angular/forms';
+import { CartService } from 'src/app/services/cart.service';
+
 
 @Component({
   selector: 'app-customer-form',
@@ -14,6 +16,7 @@ export class CustomerFormComponent implements OnInit {
     firstName: ['', Validators.compose([Validators.required, Validators.minLength(1)])],
     secondName: ['', Validators.compose([Validators.required])],
     lastName: [''],
+    // telNumber: ['', [Validators.pattern('^(900|901)+[0-9]{8}')]],
     telNumber: [''],
     email: ['', Validators.compose([Validators.required])],
     address: this.fb.group({
@@ -25,15 +28,21 @@ export class CustomerFormComponent implements OnInit {
   });
 
   constructor(
-    private fb: FormBuilder
+    private fb: FormBuilder,
+    private cartService: CartService
   ) { }
 
   ngOnInit(): void {
   }
 
+  parseToJSONCartItems() {
+    this.cartService.parseToJSONCartItems();
+  }
+
   onSubmit() {
     // TODO: Use EventEmitter with form value
     console.warn(this.customerForm.value);
+    this.parseToJSONCartItems();
   }
 
   get aliases() {
