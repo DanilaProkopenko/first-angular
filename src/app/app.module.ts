@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -20,6 +21,7 @@ import { WishlistItemModalComponent } from './components/wishlist/wishlist-item/
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatDialogModule, MAT_DIALOG_DEFAULT_OPTIONS } from '@angular/material/dialog';
 import { ProductItemModalComponent } from './components/products-list/product-item-modal/product-item-modal.component';
+import { CustomerFormComponent } from './components/cart/customer-form/customer-form.component';
 
 
 @NgModule({
@@ -35,6 +37,7 @@ import { ProductItemModalComponent } from './components/products-list/product-it
     MiniWishlistComponent,
     WishlistItemModalComponent,
     ProductItemModalComponent,
+    CustomerFormComponent,
     
   ],
   imports: [
@@ -45,9 +48,11 @@ import { ProductItemModalComponent } from './components/products-list/product-it
       InMemoryDataService, { dataEncapsulation: false }
     ),
     BrowserAnimationsModule,
-    MatDialogModule
+    MatDialogModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
-  providers: [CartService, WishlistService, { provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: { hasBackdrop: false } }],
+  providers: [CartService, WishlistService, { provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: { hasBackdrop: true } }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

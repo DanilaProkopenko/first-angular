@@ -33,7 +33,20 @@ export class CartService {
       });
     }
 
-    console.log(this.cartItems)
+    this.totalCostOfCart();
+  }
+
+  cartTotal: number = 0;
+
+  // TODO итоговая стоимость некорректно работает
+  totalCostOfCart() {
+    this.cartItems.forEach(el => {
+      console.log("el.qty: " + el.qty + " el.price: " + el.price)
+      this.cartTotal += (el.qty * el.price)
+    });
+
+    console.log(this.cartTotal);
+    return this.cartTotal;
   }
 
   getCartItems() {
@@ -65,19 +78,11 @@ export class CartService {
     }
   }
 
-  cartJson = [];
-  parseToJsonCartItems(cartJSon = []) {
-    let newCartItems = this.cartItems.map(el => {
-      // console.log(el);
-      let cartItemJSON = JSON.parse(JSON.stringify(el));
-      console.log(cartItemJSON);
-      return cartJSon = cartItemJSON;
+  cartItemJSON = [] as any[];
+  parseToJSONCartItems() {
+    this.cartItems.map(el => {
+      this.cartItemJSON.push(JSON.parse(JSON.stringify(el)));
     })
-
-    // if (Array.isArray(arr)) {
-    //   console.log("array");
-    // } else if (typeof arr == 'string') console.log ('string');
-    // else if (arr != null && typeof arr == 'object') console.log ('object');
-    // else console.log ('other');
+    return this.cartItemJSON;
   }
 }

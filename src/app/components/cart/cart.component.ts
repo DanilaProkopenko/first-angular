@@ -11,8 +11,8 @@ import { WishlistService } from 'src/app/services/wishlist.service';
 export class CartComponent implements OnInit {
 
   cartItems = [] as any[];
-  cartJSon = [];
-  productPrice = [];
+  cartTotal : any;
+  cartItemJSON : any;
 
   constructor(
     private cartService: CartService,
@@ -21,6 +21,7 @@ export class CartComponent implements OnInit {
 
   ngOnInit(): void {
     this.cartItems = this.cartService.getCartItems();
+    // this.cartItemJSON = this.parseToJSONCartItems();
   }
 
   delete(item: any) {
@@ -40,8 +41,9 @@ export class CartComponent implements OnInit {
     this.cartService.delete(item);
   }
 
-  parseToJsonCartItems(cartJSon = []) {
-    this.cartService.parseToJsonCartItems(cartJSon);
+  parseToJSONCartItems() {
+    console.log(this.cartItemJSON);
+    return this.cartItemJSON = this.cartService.parseToJSONCartItems();
   }
 
 }

@@ -1,0 +1,54 @@
+<div class="customer-form__box">
+    <form [formGroup]="customerForm" (ngSubmit)="onSubmit()" class="customer-form">
+
+        <div class="customer-form__f-name">
+            <input type="text" placeholder="Фамилия*" formControlName="firstName" required minlength="1">
+        </div>
+
+        <div class="customer-form__s-name">
+            <input type="text" placeholder="Имя*" formControlName="secondName" required minlength="1">
+        </div>
+
+        <div class="customer-form__l-name">
+            <input type="text" placeholder="Отчество" formControlName="lastName">
+        </div>
+
+        <div class="customer-form__t-number">
+            <input type="text" placeholder="Номер телефона" formControlName="telNumber">
+        </div>
+
+        <div class="customer-form__email">
+            <input type="text" placeholder="Почта*" formControlName="email" required>
+        </div>
+
+        <div formGroupName="address" class="customer-form__address">
+            <h3>Адрес</h3>
+
+            <div class="customer-form__address__state">
+                <input type="text" placeholder="Государство*" formControlName="state" required>
+            </div>
+
+
+            <div class="customer-form__address__city">
+                <input type="text" placeholder="Город*" formControlName="city" required>
+            </div>
+
+            <div class="customer-form__address__street">
+                <input type="text" placeholder="Улица*" formControlName="street" required>
+            </div>
+
+        </div>
+        <div class="customer-form__comment">
+            <input type="text" placeholder="Комментарий" formControlName="comment">
+        </div>
+
+        <button type="submit" class="customer-form__submit-btn" [disabled]="!customerForm.valid">Отправить</button>
+
+        <p>
+            Form value: {{ this.customerForm.value }}
+        </p>
+        <p>
+            Form Status: {{ customerForm.status }}
+        </p>
+    </form>
+</div>
