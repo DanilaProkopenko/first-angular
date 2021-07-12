@@ -21,7 +21,9 @@ export class MiniWishlistModalComponent implements OnInit {
 
   items = [] as any [];
   getItems(){
-    return this.items = this.ws.getWishlistItems();
+    this.items = this.ws.getWishlistItems();
+    this.items = this.items.slice(-5);
+    return this.items;
   }
   onNoClick(): void {
     this.dialogRef.close();
