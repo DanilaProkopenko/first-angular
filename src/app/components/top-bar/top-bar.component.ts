@@ -47,7 +47,7 @@ export class TopBarComponent implements OnInit {
 
   openWishlistDialog() {
     const dialogRef = this.dialog.open(MiniWishlistModalComponent, {
-      width: '1000px',
+      width: '800px',
       // data: this.wishlistItems
     });
 
