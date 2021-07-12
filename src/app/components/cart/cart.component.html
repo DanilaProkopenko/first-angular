@@ -61,7 +61,7 @@
 </div>
 
 <app-customer-form></app-customer-form>
-<button (click)="parseToJSONCartItems()">TO JSON</button>
+<button (click)="parseToJSONCartItems()" class="cart__json-btn">TO JSON</button>
 
 <div class="json-cart">
     <div *ngFor="let item of cartItemJSON" class="json-cart__item">
