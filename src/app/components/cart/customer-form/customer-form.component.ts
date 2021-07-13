@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 // import { FormGroup, FormControl } from '@angular/forms';
 import { FormBuilder } from '@angular/forms';
 import { Validators } from '@angular/forms';
@@ -12,6 +12,8 @@ import { CartService } from 'src/app/services/cart.service';
   styleUrls: ['./customer-form.component.scss']
 })
 export class CustomerFormComponent implements OnInit {
+
+
   customerForm = this.fb.group({
     firstName: ['', Validators.compose([Validators.required, Validators.minLength(1)])],
     secondName: ['', Validators.compose([Validators.required])],
@@ -35,13 +37,11 @@ export class CustomerFormComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  parseToJSONCartItems() {
-    this.cartService.parseToJSONCartItems();
-  }
-
   onSubmit() {
     // TODO: Use EventEmitter with form value
     console.warn(this.customerForm.value);
+
+    // console.log(this.formValid)
     this.parseToJSONCartItems();
   }
 
@@ -51,5 +51,11 @@ export class CustomerFormComponent implements OnInit {
 
   addAlias() {
     this.aliases.push(this.fb.control(''));
+  }
+
+  cartItemJSON: any;
+
+  parseToJSONCartItems() {
+    return this.cartItemJSON = this.cartService.parseToJSONCartItems();
   }
 }

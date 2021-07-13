@@ -42,10 +42,43 @@
             <input type="text" placeholder="Комментарий" formControlName="comment">
         </div>
 
-        <button type="submit" class="customer-form__submit-btn" (click)="onSubmit()"
-            [disabled]="!customerForm.valid">Отправить</button>
+        <button type="submit" class="customer-form__submit-btn" [disabled]="!customerForm.valid">Отправить</button>
         <!-- <p>
             Form Status: {{ customerForm.status }}
         </p> -->
     </form>
+
+    <!-- <button (click)="parseToJSONCartItems()" class="cart__json-btn">TO JSON</button> -->
+
+
+    <div class="json-cart">
+        <div *ngFor="let item of cartItemJSON" class="json-cart__item">
+    
+            <div class="json-cart__item__id">
+                <p>
+                    Id товара: {{item.productId}}
+                </p>
+            </div>
+            <div class="json-cart__item__name">
+                <p>
+                    Наименование товара: {{item.name}}
+                </p>
+            </div>
+            <div class="json-cart__item__qty">
+                <p>
+                    Количество товара: {{item.qty}}
+                </p>
+            </div>
+            <div class="json-cart__item__price">
+                <p>
+                    Цена: {{item.price}}
+                </p>
+            </div>
+            <div class="json-cart__item__общая стоимость товара">
+                <p>
+                    Общая стоимость: {{item.totalPrice}}
+                </p>
+            </div>
+        </div>
+    </div>
 </div>
