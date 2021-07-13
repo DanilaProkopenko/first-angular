@@ -20,7 +20,7 @@ export class CustomerFormComponent implements OnInit {
     lastName: [''],
     // telNumber: ['', [Validators.pattern('^(900|901)+[0-9]{8}')]],
     telNumber: [''],
-    email: ['', Validators.compose([Validators.required])],
+    email: ['', Validators.compose([Validators.required, Validators.email])],
     address: this.fb.group({
       state: ['', Validators.compose([Validators.required])],
       city: ['', Validators.compose([Validators.required])],
